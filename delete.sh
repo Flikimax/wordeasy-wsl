@@ -1,5 +1,10 @@
 # Delete a WordPress website.
-read -p "Name of the website to be deleted: " NAME
+cd /var/www
+tput setaf 1;
+ls -I html 2> /dev/null
+tput setaf 7;
+
+echo "\n"; read -p "Name of the website to be deleted: " NAME
 
 if [ "$NAME" ]; then
     NAME=$(echo "$NAME" | tr '[:upper:]' '[:lower:]')

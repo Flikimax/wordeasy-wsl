@@ -1,5 +1,11 @@
 # Create a WordPress website.
-read -p "Website name: " NAME
+
+cd /var/www
+tput setaf 4;
+ls -I html 2> /dev/null
+tput setaf 7;
+
+echo "\n"; read -p "Website name: " NAME
 
 if [ "$NAME" ]; then
     NAME=$(echo "$NAME" | tr '[:upper:]' '[:lower:]')
@@ -14,7 +20,8 @@ if [ "$NAME" ]; then
         sudo mv wordpress /var/www/$NAME
 
         # Permissions.
-        sudo chown -R www-data:www-data /var/www/$NAME/
+        CURRENT_USER=$(whoami)
+        sudo chown -R $CURRENT_USER:$CURRENT_USER /var/www/$NAME/
         sudo chmod -R 755 /var/www/$NAME/
 
         # The root user data is obtained.
