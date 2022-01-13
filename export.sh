@@ -34,15 +34,15 @@ if [ "$NAME" ]; then
 
         # Permissions.
         CURRENT_USER=$(whoami)
-        sudo chown -R $CURRENT_USER:$CURRENT_USER ${DATE}_${NAME}.sql
-        sudo chmod -R 755 ${DATE}_${NAME}.sql
+        sudo chown -R www-data:$CURRENT_USER ${DATE}_${NAME}.sql
+        sudo chmod -R 775 ${DATE}_${NAME}.sql
 
         # ZIP
         sudo zip -r ${DATE}_${NAME}.zip wp-content ${DATE}_${NAME}.sql
 
         # Permissions.
-        sudo chown -R $CURRENT_USER:$CURRENT_USER ${DATE}_${NAME}.zip
-        sudo chmod -R 755 ${DATE}_${NAME}.zip
+        sudo chown -R www-data:$CURRENT_USER ${DATE}_${NAME}.zip
+        sudo chmod -R 775 ${DATE}_${NAME}.zip
 
         # Disposal of waste.
         sudo rm ${DATE}_${NAME}.sql

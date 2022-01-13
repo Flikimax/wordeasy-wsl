@@ -1,4 +1,4 @@
-# Description
+# WordEasy WSL
 
 Automates the installation of the packages required for WordPress on WSL to work.
 
@@ -9,8 +9,8 @@ In addition to this it facilitates the creation and removal of websites by runni
 - **Nginx**
 - **MariaDB**
 - **PHP 7.4**
-- **ZIP**
 - **WP-CLI**
+- **ZIP**
 
 # Requirements
 

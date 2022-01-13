@@ -30,9 +30,9 @@ if [ "$NAME" ]; then
 
             # Permissions.
             CURRENT_USER=$(whoami)
-            sudo chmod -R 755 wp-content
-            sudo chown -R $CURRENT_USER:$CURRENT_USER wp-content
-
+            sudo chown -R www-data:$CURRENT_USER wp-content
+            sudo chmod -R 775 wp-content
+            
 
             # The root user data is obtained.
             # DBUSER=$(grep DB_USER /etc/fkm/fkm.conf | cut -d \' -f 4)

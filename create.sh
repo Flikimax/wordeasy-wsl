@@ -21,9 +21,9 @@ if [ "$NAME" ]; then
 
         # Permissions.
         CURRENT_USER=$(whoami)
-        sudo chown -R $CURRENT_USER:$CURRENT_USER /var/www/$NAME/
-        sudo chmod -R 755 /var/www/$NAME/
-
+        sudo chown -R www-data:$CURRENT_USER /var/www/$NAME/
+        sudo chmod -R 775 /var/www/$NAME/
+        
         # The root user data is obtained.
         DBUSER=$(grep DB_USER /etc/fkm/fkm.conf | cut -d \' -f 4)
         DBPSW=$(grep DB_PSW /etc/fkm/fkm.conf | cut -d \' -f 4)
