@@ -100,3 +100,11 @@ sh delete.sh
 ```
 
 Type the name of the site you want to delete.
+
+## Reset Permissions
+
+To reset permissions run the following command:
+
+```bash
+sh resetPermissions.sh
+```
